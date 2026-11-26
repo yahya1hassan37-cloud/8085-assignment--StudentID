@@ -1,0 +1,36 @@
+
+; Name: yahya hassan ali 
+; Student ID: 2025001018
+; Section: 2
+; Question: Q3 - Count Even and Odd Numbers
+
+LXI H,2500H
+MOV C,M
+INX H
+
+MVI D,00H
+MVI E,00H
+
+LOOP:
+MOV A,M
+ANI 01H
+JNZ ODD
+
+INR D
+JMP NEXT
+
+ODD:
+INR E
+
+NEXT:
+INX H
+DCR C
+JNZ LOOP
+
+MOV A,D
+STA 2600H
+
+MOV A,E
+STA 2601H
+
+HLT
